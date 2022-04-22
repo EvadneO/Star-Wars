@@ -1,0 +1,20 @@
+.row {
+   
+   
+
+justify-content: space-around;
+    padding: 20px;
+    margin: auto;
+ 
+}
+
+#inicio {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 70px;
+    font-weight: 80px;
+    border: 30px;
+    border-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

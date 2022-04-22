@@ -1,0 +1,64 @@
+.titulo {
+    color:cornsilk;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  align-items: flex-start;
+}
+
+.imagen {
+    height: 80px;
+    width: 80px;
+}
+
+.h-100 {
+    background: rgb(49, 60, 60);
+    background: linear-gradient(135deg, rgb(77, 87, 87) 23%, rgb(91, 64, 123)); 
+}
+
+img {
+    height: 470px;
+}
+
+.img-rounded {
+    opacity:0.2;
+    filter:alpha(opacity=30)
+}
+
+.cardP.mb-3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 1000px;
+    background-image: url("https://p4.wallpaperbetter.com/wallpaper/505/162/415/star-wars-fiction-planet-wallpaper-preview.jpg");
+    background-color: transparent;
+
+}
+
+
+.card-title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.row {
+    margin: auto;
+    padding: 0%;
+}
+
+.card.mb-3 {
+border-radius: 50px;
+    
+}
+.naves{
+    padding-top: 30px;
+    border-radius: 60px;
+}
+
+#imadetalle {
+    border-radius: 70px;
+    padding: 20px;
+}
+
+.residente {
+    font-size: 8px;
+   text-align: start;
+}

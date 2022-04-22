@@ -1,6 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			personaje:[],
+			planetas:[],
+			nave:[],
+			people:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +19,48 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+getPersonaje: () => {
+
+fetch("https://swapi.dev/api/people")
+.then(response => response.json())
+.then(result => {console.log(result.results)
+setStore({personaje:result.results})
+})
+.catch(error => console.log('error', error));
+
+},
+
+getPlanetas:() => {
+
+	fetch("https://swapi.dev/api/planets")
+  .then(response => response.json())
+  .then(result => {console.log(result.results)
+setStore({planetas:result.results})
+})
+  .catch(error => console.log('error', error));
+
+},
+
+getNave:() => {
+	fetch("https://swapi.dev/api/starships")
+	.then(response => response.json())
+	.then(result => {console.log(result.results)
+	setStore({nave:result.results})
+	})
+	.catch(error => console.log('error', error));
+},
+
+getPeople: () => {
+
+	fetch("https://swapi.dev/api/people")
+	.then(response => response.json())
+	.then(result => {console.log(result.results)
+	setStore({people:result.results})
+	})
+	.catch(error => console.log('error', error));
+	
+	},
+
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
