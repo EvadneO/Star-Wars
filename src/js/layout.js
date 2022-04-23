@@ -8,9 +8,11 @@ import { Planetas } from "./views/planetas";
 import { Starships } from "./views/starships"
 import injectContext from "./store/appContext";
 import { People } from "./views/people";
+import { Plane } from "./views/plane";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Naveestelar } from "./views/naveestelar";
 
 //create your first component
 const Layout = () => {
@@ -30,14 +32,20 @@ const Layout = () => {
 						<Route exact path="/personaje">
 							<Personaje />
 						</Route>
-						<Route exact path="/people">
+						<Route exact path="/people/:id">
 							<People />
 						</Route>
 						<Route exact path="/planetas">
 							<Planetas />
 						</Route>
+						<Route exact path="/plane/:id">
+							<Plane />
+						</Route>
 						<Route exact path="/starships">
 							<Starships />
+						</Route>
+						<Route exact path="/naveestelar/:id">
+							<Naveestelar />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

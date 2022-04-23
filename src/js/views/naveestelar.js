@@ -3,22 +3,21 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 
 import "../../styles/personaje.css";
-import { Detalle } from "../component/detalle";
+import { Nave } from "../component/nave";
 
 
 
 
-export const People = () => {
+export const Naveestelar = () => {
 	const { store, actions } = useContext(Context);	
 
 
 
 	return (
 			<div className="row">
-				<Detalle />	
+				<Nave />	
 			</div>
 
 	);
 
 };
-

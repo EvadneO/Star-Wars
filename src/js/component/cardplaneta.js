@@ -14,13 +14,19 @@ export const Cardplaneta = (props) => {
         <h2 className="card-title"><strong>Planeta:</strong> {props.objeto.name}</h2>
         <h5 className="card-text"><strong>Rotación: </strong> {props.objeto.rotation_period}</h5>
         <h5 className="card-text"><strong>Orbita: </strong> {props.objeto.orbital_period}</h5>
-        <h5 className="card-text"><strong>Diametro: </strong> {props.objeto.diameter}</h5>
-        <h5 className="card-text"><strong>Clima: </strong> {props.objeto.climate}</h5>
-        <h5 className="card-text"><strong>Gravedad: </strong> {props.objeto.gravity}</h5>
-        <h5 className="card-text"><strong>Terreno: </strong> {props.objeto.terrain}</h5>
-        <h5 className="card-text"><strong>Agua Superficial: </strong> {props.objeto.surface_water}</h5>
-        <h5 className="card-text"><strong>Población: </strong> {props.objeto.population}</h5>
       </div>
+      <div className="row">
+    <div className="col-10">
+    <Link to={"/plane/"+props.index}>
+   <button className="card-link">Leer más</button>
+   </Link>
+   </div>
+   <div className="col-2">
+   <button>
+    <a href="#" className="card-link">🖤</a>
+    </button>
+    </div>
+</div>
     </div>
   </div>
 </div>

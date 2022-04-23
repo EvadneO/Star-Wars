@@ -19,16 +19,16 @@ export const Card = (props) => {
   </ul>
   <div className="row">
     <div className="col-10">
-    <Link to="/people">
+    <Link to={"/people/"+props.index}>
    <button className="card-link">Leer más</button>
    </Link>
    </div>
    <div className="col-2">
-     <Link to="/">
+     
    <button>
     <a href="#" className="card-link">🖤</a>
     </button>
-    </Link>
+    
     </div>
 </div>
 </div>
