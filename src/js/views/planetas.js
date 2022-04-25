@@ -15,7 +15,7 @@ export const Planetas = () => {
 				{store.planetas.map(function(objeto, index){
 					return <Cardplaneta objeto={objeto} index={index}/>
 				})}
-
+     
 			</div>
 
 	);

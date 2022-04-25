@@ -1,10 +1,12 @@
+import { Item } from "semantic-ui-react";
+
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
       personaje: [],
       planetas: [],
       nave: [],
-     
+      favorites:[],
       demo: [
         {
           title: "FIRST",
@@ -49,6 +51,37 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
 
+
+          //AGREGA EL PERSONAJE A FAVORITOS
+          getFavorites: () => {
+            if (localStorage.getItem('List')) {
+                let u = localStorage.getItem('List');
+                setStore({ favorites: JSON.parse(u) })
+            }
+        },
+        
+        saveList: () => {
+          localStorage.setItem('list', JSON.stringify(getStore().favorites))
+      },
+      addCharacter: (personaje) => {
+          if (getStore().favorites.includes(personaje)) {
+              alert('this character already exist in your List')
+              console.log('the character already exist on your list')
+          } else {
+
+              setStore({
+                  favorites: getStore().favorites.concat(personaje)
+              })
+          }
+          getActions().saveList();
+      },
+      deleteFavorite: (item) => {
+          setStore({
+              favorites: getStore().favorites.filter(fav => fav !== item)
+          })
+          
+          getActions().saveList();
+        },
 
       // Use getActions to call a function within a fuction
       exampleFunction: () => {

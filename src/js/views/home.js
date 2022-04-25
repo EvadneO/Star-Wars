@@ -35,9 +35,9 @@ export const Home = () => {
   </button>
   </div>
 <div className="col">
-<div className="row"><Personaje/></div>
-<div className="row"><Planetas/></div>
-<div className="row"><Starships/></div>
+<div className="row-4"><Personaje/></div>
+<div className="row-4"><Planetas/></div>
+<div className="row-4"><Starships/></div>
 </div>
 </div>
 
