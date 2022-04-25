@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Card = (props) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="card mb-5" style={{ width: "18rem" }}>
       <img
@@ -39,13 +40,13 @@ export const Card = (props) => {
         </button>
         <button
           onClick={() => {
-            actions.addCharacter(valor.name);
+            actions.addCharacter(objeto.name);
           }}
           className="btn btn-lg btn-danger d-block float-right"
         >
           <i
             className={
-              store.favorites.includes(valor.name)
+              store.favorites.includes(objeto.name)
                 ? "colored fas fa-star"
                 : "fas fa-star"
             }

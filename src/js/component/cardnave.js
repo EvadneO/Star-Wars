@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Cardnave = (props) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="card mb-3" style={{ width: "680px" }}>
       <img
@@ -24,7 +25,7 @@ export const Cardnave = (props) => {
               <strong>Manufactura: </strong> {props.objeto.manufacturer}
             </h5>
             <h5 className="card-text">
-              <strong>Costo: </strong> {props.cost_in_credits}
+              <strong>Costo: </strong> {props.objeto.cost_in_credits}
             </h5>
           </div>
         </div>
@@ -40,13 +41,13 @@ export const Cardnave = (props) => {
             </button>
             <button
               onClick={() => {
-                actions.addCharacter(valor.name);
+                actions.addCharacter(objeto.name);
               }}
               className="btn btn-lg btn-danger d-block float-right"
             >
               <i
                 className={
-                  store.favorites.includes(valor.name)
+                  store.favorites.includes(objeto.name)
                     ? "colored fas fa-star"
                     : "fas fa-star"
                 }

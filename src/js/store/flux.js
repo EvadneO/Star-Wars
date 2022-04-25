@@ -65,8 +65,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       addCharacter: (personaje) => {
           if (getStore().favorites.includes(personaje)) {
-              alert('this character already exist in your List')
-              console.log('the character already exist on your list')
+              alert('Este personaje ya existe en la lista')
+              console.log('Este personje existe en la lista')
           } else {
 
               setStore({

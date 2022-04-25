@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
 export const Favorites = () => {
@@ -14,13 +14,13 @@ export const Favorites = () => {
         </div>
         <ul className="list-group">
           {!!store.favorites.length !== 0 &&
-            store.favorites.map((valor, index) => {
+            store.favorites.map((objeto, index) => {
               return (
                 <li key={index} className="list-group-item" id="favorito2">
-                  {valor}{" "}
+                  {objeto}{" "}
                   {
                     <i
-                      onClick={() => actions.deleteFavorite(valor)}
+                      onClick={() => actions.deleteFavorite(objeto)}
                       className="fa fa-trash-alt float-right"
                     ></i>
                   }

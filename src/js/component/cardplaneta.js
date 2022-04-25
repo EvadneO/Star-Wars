@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Cardplaneta = (props) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="cardP mb-3" style={{ width: "680px" }}>
       <div className="row g-0">
@@ -30,13 +31,13 @@ export const Cardplaneta = (props) => {
 
             <button
               onClick={() => {
-                actions.addCharacter(valor.name);
+                actions.addCharacter(objeto.name);
               }}
               className="btn btn-lg btn-danger d-block float-right"
             >
               <i
                 className={
-                  store.favorites.includes(valor.name)
+                  store.favorites.includes(objeto.name)
                     ? "colored fas fa-star"
                     : "fas fa-star"
                 }

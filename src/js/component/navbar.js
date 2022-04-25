@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import PropTypes from "prop-types";
 
 export const Navbar = () => {
+  
   return (
     <nav className="navbar navbar bg-black mb-3">
       <Link to="/">
