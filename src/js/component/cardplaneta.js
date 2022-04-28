@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Cardplaneta = (props) => {
   const { store, actions } = useContext(Context);
   return (
+<div className="fluid">
     <div className="cardP mb-3" style={{ width: "680px" }}>
       <div className="row g-0">
         <div className="col-md-12">
@@ -21,23 +23,19 @@ export const Cardplaneta = (props) => {
           </div>
           <div className="d-flex justify-content-between">
             <Link to={"/plane/" + props.index}>
-              <button className="cardButton btn btn-outline-info">
+              <button className="cardButton btn btn-lg btn-danger outline-info">
                 Leer más
               </button>
             </Link>
-            <button className="btn btn-outline-info">
-              <i className="fas fa-heart" />
-            </button>
-
             <button
               onClick={() => {
-                actions.addCharacter(objeto.name);
+                actions.addCharacter(props.objeto.name);
               }}
               className="btn btn-lg btn-danger d-block float-right"
             >
               <i
                 className={
-                  store.favorites.includes(objeto.name)
+                  store.favorites.includes(props.objeto.name)
                     ? "colored fas fa-star"
                     : "fas fa-star"
                 }
@@ -46,6 +44,7 @@ export const Cardplaneta = (props) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

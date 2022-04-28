@@ -13,7 +13,7 @@ import { Plane } from "./views/plane";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Naveestelar } from "./views/naveestelar";
-import {Favorites} from "./views/favorites";
+
 
 //create your first component
 const Layout = () => {
@@ -47,9 +47,6 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/naveestelar/:id">
 							<Naveestelar />
-						</Route>
-						<Route exact path="/favorites">
-							<Favorites/>
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

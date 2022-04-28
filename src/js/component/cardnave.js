@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-
+import React, { Component, useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Cardnave = (props) => {
   const { store, actions } = useContext(Context);
   return (
+ <div className="">   
     <div className="card mb-3" style={{ width: "680px" }}>
       <img
         src="https://wallpaperstock.net/wallpapers/thumbs1/20966.jpg"
@@ -32,22 +33,19 @@ export const Cardnave = (props) => {
         <div>
           <div className="d-flex justify-content-between">
             <Link to={"/naveestelar/" + props.index}>
-              <button className="cardButton btn btn-outline-info">
+              <button className="cardButton btn btn-lg btn-danger outline-info">
                 Leer más
               </button>
             </Link>
-            <button className="btn btn-outline-info">
-              <i className="fas fa-heart" />
-            </button>
             <button
               onClick={() => {
-                actions.addCharacter(objeto.name);
+                actions.addCharacter(props.objeto.name);
               }}
               className="btn btn-lg btn-danger d-block float-right"
             >
               <i
                 className={
-                  store.favorites.includes(objeto.name)
+                  store.favorites.includes(props.objeto.name)
                     ? "colored fas fa-star"
                     : "fas fa-star"
                 }
@@ -57,5 +55,7 @@ export const Cardnave = (props) => {
         </div>
       </div>
     </div>
+    </div>
+
   );
 };

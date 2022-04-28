@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Component, useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import PropTypes from "prop-types";
 
 export const Navbar = () => {
-  
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar bg-black mb-3">
       <Link to="/">
@@ -22,10 +23,8 @@ export const Navbar = () => {
       <Link to="/starships">
         <div className="titulo">Starships</div>
       </Link>
-
       <div className="ml-auto">
-        <Link to="/personaje"></Link>
-        <div class="dropdown">
+        <div class="dropdown dropstart">
           <button
             class="btn btn-primary dropdown-toggle"
             type="button"
@@ -40,14 +39,25 @@ export const Navbar = () => {
               <a class="dropdown-item" href="#"></a>
             </li>
             <li
-              className="nav-item btn-outline-danger mx-3 float-right"
+              className="nav-item btn-outline-danger mb-3 float-right"
               id="favorite-btn"
             >
-              <Link className="nav-link active favs" to="/favorites">
-                <i className="fas fa-star"></i> FAVORITES
-              </Link>
+              {!!store.favorites.length !== 0 &&
+            store.favorites.map((objeto, index) => {
+              return (
+                <li key={index} className="list-group-item float-right" id="favorito2">
+                  {objeto}{" "}
+                  {
+                    <i
+                      onClick={() => actions.deleteFavorite(objeto)}
+                      className="fa fa-trash-alt float-right"
+                    ></i>
+                  }
+                  </li>
+                );
+              })}
             </li>
-          </ul>
+            </ul>
         </div>
       </div>
     </nav>
